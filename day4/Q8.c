@@ -7,7 +7,7 @@ int main(){
 
             a=(b*(b+1))/2;
 
-            printf("Sum Obtained : %d\n", a,b );
+            printf("Sum Obtained of first N Natural Numbers : %d\n", a,b );
 
             return 0;
 }
