@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-int main(){
-           float S,H,M;
-           printf("Enter The Seconds\n");
-           scanf("%f",&S);
-           M=S/60;
-           H=M/60;
-           S=S;
+int main()
+{
+            int S, H, M;
+            printf("Enter The Seconds\n");
+            scanf("%d", &S);
+            H = S/3600;
+            M = S % 60;
+            S = S % 3600;
 
-           printf("Seconds To Mintues :%.2f Mintues \n ",M);
-           printf("Seconds To Hour :%.2f Hours\n",H );
-           printf("Seconds to Seconds :%.2f Seconds\n ",S); 
+            printf("%.2d Hours:", H);
+            printf("%.2d Mintues:", M);
+            printf("%.2d Seconds", S);
             return 0;
 }
