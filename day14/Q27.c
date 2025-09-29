@@ -5,7 +5,7 @@ int main(){
             printf("Enter the value of n:\n ");
             scanf("%d",&n);
             for(i=0;i<=n;i++){
-                       c=(i*i);
+                       c=(n*n);
             }
             printf("The sum of First %d Odd numbers is %d \n",n,c);
             return 0;
