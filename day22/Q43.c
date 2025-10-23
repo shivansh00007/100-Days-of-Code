@@ -1,14 +1,34 @@
 #include <stdio.h>
 
-int main(){
-            int a,b;
-            printf("Enter the Number\n");
-            scanf("%d",&a);
+int main() {
+    int i, n, temp, digit, factorial, sum = 0;
 
-            printf("enter the Number\n");
-            scanf("%d",&b);
+    printf("Enter the Number: ");
+    scanf("%d", &n);
 
-            int product=a*b;
-            printf("%d",product);
-            return 0;
+    temp = n; 
+
+    while (n > 0) {
+        digit = n % 10;
+        factorial=1;
+          
+
+        
+        for (i = 1; i <= digit; i++) {
+            factorial *= i;
+        }
+        
+        n = n / 10;  
+        sum += factorial;
+    }
+
+    if (sum == temp) {
+        printf("It is a Strong Number\n");
+    } else {
+        printf("Not a Strong Number\n");
+    }
+
+    return 0;
 }
+
+
