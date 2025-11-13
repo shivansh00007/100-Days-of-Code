@@ -1,30 +1,27 @@
 #include <stdio.h>
-
-void reverse(int arr[], int start, int end) {
-    int temp;
-    while (start < end) {
-        temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
-    }
-}
+#include <limits.h>
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+    int arr[] = {12, 35, 1, 10, 34, 1};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int k = 3;
-
-    k = k % size;
-
-    reverse(arr, 0, size - 1);
-    reverse(arr, 0, k - 1);
-    reverse(arr, k, size - 1);
+    int largest = INT_MIN;
+    int second = INT_MIN;
 
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        if (arr[i] > largest) {
+            second = largest;
+            largest = arr[i];
+        } else if (arr[i] > second && arr[i] != largest) {
+            second = arr[i];
+        }
     }
+
+    if (second == INT_MIN)
+        printf("No second largest found\n");
+    else
+        printf("Second largest element: %d\n", second);
 
     return 0;
 }
+
+
